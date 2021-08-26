@@ -13,7 +13,7 @@ function sendEmail() {
     isNotEmpty(body)
   ) {
     $.ajax({
-      url: "/sendEmail.php",
+      url: "sendEmail.php",
       method: "POST",
       dataType: "json",
       data: {
@@ -23,14 +23,18 @@ function sendEmail() {
         body: body.val(),
       },
       success: function (response) {
+        console.log(response);
         $("#myForm")[0].reset();
-        $(".sent-notification").text("Message sent successfully.");
+        $(".sent-message").text("Your Message is successfully sent!");
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log(jqXHR);
       },
     });
   }
   function isNotEmpty(caller) {
     if (caller.val() == "") {
-      caller.success("border", "1px solid red");
+      caller.css("border", "1px solid red");
       return false;
     } else {
       caller.css("border", "");

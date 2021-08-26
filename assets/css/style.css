@@ -32,6 +32,36 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
+.loader {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #16191e;
+  position: fixed;
+  z-index: 9999;
+}
+
+.loader > div {
+  height: 50px;
+  width: 50px;
+  border: 10px solid #45474b;
+  border-top-color: #2a88e6;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 50%;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -229,8 +259,8 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/me.jpg") top center;
-  background-size: initial;
+  background: url("../img/Main.jpeg") top center;
+  background-size: cover;
 }
 
 #hero:before {
@@ -251,7 +281,7 @@ h6 {
 }
 
 #hero h1 {
-  margin: 0 0 10px 0;
+  margin: 0 -175px 10px 0 !important;
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
@@ -850,7 +880,7 @@ section {
   background: #fff;
   width: 100%;
   box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
-  height: 60%;
+  height: 75%;
 }
 
 .contact .info i {
